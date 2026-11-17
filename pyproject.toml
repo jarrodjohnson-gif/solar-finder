@@ -17,6 +17,9 @@ dependencies = [
     "python-dotenv>=1.0.0",
 ]
 
+[project.optional-dependencies]
+web = ["fastapi>=0.110", "uvicorn>=0.29", "python-multipart>=0.0.9"]
+
 [project.scripts]
 solar-finder-3000 = "solar_detector.cli:main"
 

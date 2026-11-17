@@ -28,7 +28,7 @@ _MODEL_URLS = [
 # Fallback: base YOLOv8n (no solar-specific training, general object detection only)
 _FALLBACK_MODEL = "yolov8n.pt"
 
-_MODELS_DIR = Path(__file__).resolve().parents[3] / "models"
+_MODELS_DIR = Path(__file__).resolve().parents[2] / "models"  # <repo>/models
 _CACHED_MODEL_PATH = _MODELS_DIR / "solar_panels.pt"
 _IS_SOLAR_MODEL = _MODELS_DIR / "solar_panels.verified"
 

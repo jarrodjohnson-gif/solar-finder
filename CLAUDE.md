@@ -35,6 +35,20 @@ solar/
 
 ---
 
+## Web app (localhost:8002)
+
+`src/solar_detector/api/app.py` (FastAPI). Started from the localhost:1111 dashboard, or:
+
+```bash
+.venv/bin/uvicorn --app-dir src solar_detector.api.app:app --host 127.0.0.1 --port 8002
+```
+
+- `GET /tool`: page, type an address or upload a roof image
+- `POST /api/detect` `{address}` or `{lat, lng}` (needs GOOGLE_MAPS_API_KEY), `POST /api/detect-image` (multipart `image`, no key needed), `GET /health`
+- The web app never downloads model weights itself (third-party `.pt` files can run code when loaded). It uses `models/solar_panels.pt` only if already installed and verified, else the colour/shape detector.
+
+---
+
 ## CLI Usage
 
 ```bash
@@ -139,7 +153,7 @@ All tests mock external API calls — no API keys or network needed.
 
 ## Branch
 
-Active development branch: `claude/rename-solar-rep-HaWcF`
+Default branch: `main`.
 
 ---
 

@@ -7,3 +7,6 @@ geopy>=2.4.0
 python-dotenv>=1.0.0
 pytest>=7.4.0
 pytest-mock>=3.12.0
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
