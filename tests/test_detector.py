@@ -1,5 +1,6 @@
 """Tests for detector.py"""
 
+import numpy as np
 import pytest
 from unittest.mock import patch, MagicMock
 from PIL import Image
@@ -19,7 +20,7 @@ def _mock_yolo_result(boxes_data: list[tuple[list[float], float]]):
     mock_boxes = []
     for xyxy, conf in boxes_data:
         box = MagicMock()
-        box.xyxy = [xyxy]
+        box.xyxy = [np.array(xyxy, dtype=float)]  # real boxes are arrays with .tolist()
         box.conf = [conf]
         mock_boxes.append(box)
 
