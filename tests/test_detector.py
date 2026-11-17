@@ -47,7 +47,8 @@ def test_detect_with_panels(monkeypatch):
         ([350, 150, 500, 280], 0.72),
     ])
 
-    with patch("solar_detector.detector._model", mock_model):
+    with patch("solar_detector.detector._model", mock_model), \
+         patch("solar_detector.detector.is_solar_model_available", return_value=True):
         result = detect_solar_panels(_blank_image(), annotate=False)
 
     assert result.has_solar_panels is True
